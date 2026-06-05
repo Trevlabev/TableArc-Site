@@ -3,77 +3,116 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TableArc — AI Tabletop Engine</title>
-  <meta name="description" content="TableArc is a local-first AI tabletop engine for living campaigns, structured game state, tactical maps, character continuity, and AI-assisted play." />
-  <meta name="theme-color" content="#07111f" />
-  <meta property="og:title" content="TableArc — AI Tabletop Engine" />
-  <meta property="og:description" content="A local-first AI tabletop engine for living campaigns." />
-  <meta property="og:image" content="https://tablearc.site/assets/tablearc-logo.svg" />
-  <link rel="preload" as="image" href="assets/tablearc-logo.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>TableArc | Local-First AI Tabletop RPG Engine</title>
+  <meta name="description" content="TableArc is a local-first AI tabletop RPG engine for D&D-style play: live DM narration, structured state, maps, combat, rules-aware workflows, memory, and debug transparency." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page-shell">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="TableArc home"><span class="brand-mark">✦</span><span>TableArc</span></a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#studio">GreenKappa Labs</a>
-        <a href="mailto:GreenKappaLabs@gmail.com">Contact</a>
-      </div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="TableArc home">
+      <img src="assets/tablearc-logo-white.png" alt="TableArc logo" />
+    </a>
+    <nav>
+      <a href="#engine">Engine</a>
+      <a href="#dnd">D&D Play</a>
+      <a href="#modes">Modes</a>
+      <a href="#roadmap">Roadmap</a>
     </nav>
+  </header>
 
-    <section class="hero" id="top">
-      <div class="logo-card">
-        <img src="assets/tablearc-logo.svg" alt="TableArc — AI Tabletop Engine logo" />
-      </div>
+  <main id="top">
+    <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">AI Tabletop Engine</p>
-        <h1>Run living tabletop campaigns with AI, structure, and continuity.</h1>
-        <p class="lede">TableArc is a local-first AI tabletop RPG engine for natural-language play, structured adventure state, character authority, tactical maps, combat, rules-aware workflows, and transparent debugging.</p>
+        <p class="eyebrow">Local-first AI tabletop engine</p>
+        <h1>A living AI Dungeon Master backed by real game state.</h1>
+        <p class="lead">TableArc is built for D&D-style solo and small-table play: natural-language action, structured scenes, character authority, tactical maps, combat, rules-aware adjudication, continuity, and inspectable debug state.</p>
         <div class="hero-actions">
-          <a class="button primary" href="mailto:GreenKappaLabs@gmail.com?subject=TableArc">Contact GreenKappa Labs</a>
-          <a class="button ghost" href="#features">Explore features</a>
+          <a class="button primary" href="#dnd">Explore the play loop</a>
+          <a class="button" href="#engine">See the engine model</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/tablearc-banner-white.png" alt="TableArc banner" />
+        <div class="status-grid">
+          <span><strong>Scene</strong> Stateful</span>
+          <span><strong>Rules</strong> 5e-aware</span>
+          <span><strong>Map</strong> Spatial</span>
+          <span><strong>Debug</strong> Inspectable</span>
         </div>
       </div>
     </section>
 
-    <section id="features" class="section">
-      <p class="eyebrow">Core systems</p>
-      <h2>Designed as an engine, not just a chatbot.</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Live AI Game Master</h3>
-          <p>Conversation stays central while the engine tracks scenes, objectives, rolls, NPCs, clues, clocks, and consequences underneath the narrative.</p>
+    <section class="section intro" id="engine">
+      <p class="eyebrow">What TableArc is</p>
+      <h2>Not a chatbot. Not just a map. A tabletop runtime.</h2>
+      <p>Most AI RPG tools can produce fantasy prose. TableArc’s goal is different: the AI can imagine, but the engine remembers, adjudicates, maps, resolves, and proves. Characters, scenes, NPCs, locations, clues, clocks, consequences, combat state, and saves are treated as persistent engine objects rather than loose text.</p>
+      <div class="pillars">
+        <article>
+          <h3>Natural-language play</h3>
+          <p>Players act normally: sneak through the alley, question the witness, cast a spell, barricade a door, search the desk, flee, negotiate, or improvise.</p>
         </article>
-        <article class="card">
-          <h3>Structured Campaign State</h3>
-          <p>Adventure modules, characters, combat state, maps, and debug traces are treated as persistent engine objects instead of loose prose.</p>
+        <article>
+          <h3>Structured authority</h3>
+          <p>The app tracks what is true: active PC, scene state, NPC disposition, map position, resources, clocks, evidence, wounds, initiative, and aftermath.</p>
         </article>
-        <article class="card">
-          <h3>Local Model Ready</h3>
-          <p>Built with local-first play in mind, including local LLM workflows, provider configuration, and privacy-friendly campaign control.</p>
-        </article>
-        <article class="card">
-          <h3>Maps, Combat, Continuity</h3>
-          <p>TableArc is being developed toward tactical maps, rules-aware adjudication, state-derived suggestions, and campaign continuity across sessions.</p>
+        <article>
+          <h3>Debug transparency</h3>
+          <p>When something breaks, TableArc should expose which layer failed: generation, parsing, validation, state commit, combat, map, provider, or narration.</p>
         </article>
       </div>
     </section>
 
-    <section class="section split" id="studio">
-      <div>
-        <p class="eyebrow">A GreenKappa Labs project</p>
-        <h2>Built for imaginative software, AI tools, and experimental play.</h2>
+    <section class="section dark" id="dnd">
+      <p class="eyebrow">D&D-style procedure</p>
+      <h2>The table loop, translated into an AI-assisted engine.</h2>
+      <div class="loop">
+        <div><span>1</span><p>DM describes a concrete scene with usable objects, NPCs, exits, risks, and clues.</p></div>
+        <div><span>2</span><p>Player declares intent in plain language instead of choosing from a fixed menu.</p></div>
+        <div><span>3</span><p>Engine decides whether the action is automatic, impossible, uncertain, social, exploratory, spatial, or combat-related.</p></div>
+        <div><span>4</span><p>Rolls, saves, attacks, damage, spells, movement, resources, and clocks resolve through stateful contracts.</p></div>
+        <div><span>5</span><p>The world changes first. AI narration then describes the committed result and presents the next meaningful choice.</p></div>
       </div>
-      <p>GreenKappa Labs is a creative technology studio for applied AI, software, art, and interactive tools. TableArc is its AI tabletop engine project.</p>
+    </section>
+
+    <section class="section features">
+      <p class="eyebrow">Core systems</p>
+      <h2>Designed around the complete play loop.</h2>
+      <div class="feature-grid">
+        <article><h3>AI DM Mode</h3><p>Solo or small-table adventures with a live, responsive narrator constrained by scene state, character mechanics, and consequences.</p></article>
+        <article><h3>Adventure Builder</h3><p>Generate, repair, validate, and run playable modules with scenes, nodes, clocks, NPC agendas, clues, hazards, and climax structure.</p></article>
+        <article><h3>Character Authority</h3><p>The active PC governs modifiers, passives, HP, AC, attacks, spells, resources, inventory, proficiencies, and role boundaries.</p></article>
+        <article><h3>Spatial Maps</h3><p>Maps are not decoration. Spatial state owns positions, terrain, objects, exits, cover, visibility, reachability, and range.</p></article>
+        <article><h3>Combat Runtime</h3><p>Initiative, turns, movement, action economy, legal targets, attacks, saves, damage, conditions, defeat, and aftermath stay synchronized.</p></article>
+        <article><h3>Rules / Recap / Debug</h3><p>Rules lookup, state inspection, recaps, provider diagnostics, and debug exports help keep campaigns understandable and repairable.</p></article>
+      </div>
+    </section>
+
+    <section class="section modes" id="modes">
+      <p class="eyebrow">Product modes</p>
+      <h2>Built for play, prep, and inspection.</h2>
+      <div class="mode-list">
+        <div><strong>AI DM Mode</strong><span>Run an adventure through natural language while the engine commits outcomes after validation.</span></div>
+        <div><strong>DM Assistant Mode</strong><span>Help a human DM prep, track, adjudicate, recap, and improvise with human approval.</span></div>
+        <div><strong>Adventure Builder Mode</strong><span>Generate and structure playable adventures instead of static story documents.</span></div>
+        <div><strong>Rules / State / Debug Mode</strong><span>Explain rules, summarize sessions, inspect runtime truth, and diagnose failures.</span></div>
+      </div>
+    </section>
+
+    <section class="section roadmap" id="roadmap">
+      <p class="eyebrow">Project direction</p>
+      <h2>From prototype to tester-ready tabletop engine.</h2>
+      <p>The near-term focus is one excellent D&D-style play loop: create or import a character, generate a short playable adventure, enter a scene, show a useful map, resolve rolls and combat, track consequences, save the campaign, and export enough debug information to understand what happened.</p>
+      <div class="roadmap-grid">
+        <article><h3>Reliability</h3><p>Hardening adventure commit, active PC authority, provider errors, saves, imports, and model workflow boundaries.</p></article>
+        <article><h3>Play experience</h3><p>Improving the DM cockpit: current situation header, scene packet view, visual clocks, pending rolls, map-first spatial actions, and cleaner debug access.</p></article>
+        <article><h3>Distribution</h3><p>Polishing desktop packaging, local model setup, documentation, sample adventures, and guided onboarding for testers.</p></article>
+      </div>
     </section>
   </main>
 
   <footer>
-    <span>© <span id="year"></span> GreenKappa Labs</span>
-    <a href="mailto:GreenKappaLabs@gmail.com">GreenKappaLabs@gmail.com</a>
+    <p>TableArc is an independent local-first AI tabletop engine project from GreenKappa Labs.</p>
+    <p class="small">Built for structured D&D-style play, DM assistance, adventure building, maps, combat, memory, rules-aware workflows, and inspectable state.</p>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
